@@ -1,3 +1,4 @@
+import Link from "next/link"
 interface CTAData {
     title?: string;
     buttonLink?: string;
@@ -15,12 +16,12 @@ export default function CTA({ data }: CTAProps) {
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
           {data?.title}
         </h2>
-        <a
+        <Link
           href={data?.buttonLink}
           className="inline-block bg-white text-blue-600 font-semibold px-6 md:px-8 py-3 md:py-4 text-sm md:text-base rounded-full transition-all hover:bg-gray-100 hover:scale-105 shadow-lg"
         >
           {data?.buttonText}
-        </a>
+        </Link>
       </div>
     </section>
     )

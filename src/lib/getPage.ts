@@ -1,9 +1,9 @@
 import {client } from "@/lib/contentful"
 
-export async function getHomePage(){
+export async function getPage(slug:string, contentType: string){
     const response = await client.getEntries({
-        content_type: "page",
-        "fields.slug": "home",
+        content_type: contentType,
+        "fields.slug": slug,
         include:10, 
     });
     return response.items[0];
