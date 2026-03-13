@@ -21,18 +21,24 @@ export default function Feature({ data }: FeatureProps) {
 
     return (
             
-        <div className="text-center p-6">
-            {icon && (
-                <Image
-                    src={`https:${icon}`}
-                    alt="Feature Icon"
-                    className="mx-auto w-12"
-                    width={64}
-                    height={64}
-                />
-            )}
-            <h3 className="text-xl font-semibold mt-4">{data.title}</h3>
-            <p className="text-gray-600 mt-2">{data.description}</p>
+        <div className="text-center p-4 md:p-6 lg:p-8">
+      {icon && (
+        <div className="flex justify-center mb-4">
+          <Image
+            src={`https:${icon}`}
+            alt="Feature Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+            width={80}
+            height={80}
+          />
         </div>
-    );
+        )}
+      <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mt-4 text-gray-900">
+        {data.title}
+      </h3>
+      <p className="text-sm md:text-base text-gray-600 mt-2 max-w-md mx-auto">
+        {data.description}
+      </p>
+    </div>
+  );
 }

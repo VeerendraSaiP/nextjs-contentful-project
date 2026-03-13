@@ -4,7 +4,7 @@ export async function getHomePage(){
     const response = await client.getEntries({
         content_type: "page",
         "fields.slug": "home",
-        include:5, 
+        include:10, 
     });
     return response.items[0];
 }
