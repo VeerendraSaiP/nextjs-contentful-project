@@ -8,6 +8,14 @@ import type { CardType, GroupedComponent } from "@/types/contentfulType"
 
 export default async function Home() {
   const pageData = await getHomePage();
+  if (!pageData) {
+    return (
+      <main className="px-4 py-10 md:px-8 lg:px-16">
+        <p>Content is currently unavailable. Please check Contentful configuration.</p>
+      </main>
+    );
+  }
+
   const components = pageData.fields.components;
   
   // Group consecutive cards together
