@@ -1,4 +1,4 @@
-import {getHomePage } from "@/lib/getPage"
+import {getPage } from "@/lib/getPage"
 import Hero from "@/components/Hero"
 import Feature from "@/components/Feature"
 import Card from "@/components/Card"
@@ -7,7 +7,7 @@ import Footer from "@/components/Footer"
 import type { CardType, GroupedComponent } from "@/types/contentfulType"
 
 export default async function Home() {
-  const pageData = await getHomePage();
+  const pageData = await getPage("home", "page");
   if (!pageData) {
     return (
       <main className="px-4 py-10 md:px-8 lg:px-16">
