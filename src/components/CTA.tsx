@@ -17,7 +17,7 @@ export default function CTA({ data }: CTAProps) {
           {data?.title}
         </h2>
         <Link
-          href={data?.buttonLink}
+          href={typeof data?.buttonLink === 'string' ? data.buttonLink : '#'}
           className="inline-block bg-white text-blue-600 font-semibold px-6 md:px-8 py-3 md:py-4 text-sm md:text-base rounded-full transition-all hover:bg-gray-100 hover:scale-105 shadow-lg"
         >
           {data?.buttonText}
