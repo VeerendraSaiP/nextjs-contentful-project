@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import {getPage } from "@/lib/getPage"
 import Hero from "@/components/Hero"
 import Feature from "@/components/Feature"
@@ -6,7 +8,6 @@ import CTA from "@/components/CTA"
 import Footer from "@/components/Footer"
 import type { CardType, GroupedComponent } from "@/types/contentfulType"
 
-export const revalidate = 60;
 
 export default async function Home() {
   const pageData = await getPage("home", "page");
